@@ -121,6 +121,7 @@ if (!isset($_SESSION['adminSession'])) {
 <center><font color=""><b>Daftar Menu</b></center><br><br>
 <table border="2" cellspacing="2" cellpadding="2" align="center">
   <tr>
+		<td>No</td>
     <td>Makanan</td>
     <td>Gambar</td>
     <td>Rumah Makan</td>
@@ -130,9 +131,12 @@ if (!isset($_SESSION['adminSession'])) {
   </tr>
 <?php
   $data = $DBcon->query("SELECT * FROM menu");
+	$no = 0;
   while ($baris = $data->fetch_array()) {
+		$no = $no+1;
     ?>
       <tr>
+				<td><?php echo $no ?></td>
         <td><?php echo $baris['makanan']; ?></td>
         <td><img src=<?php echo $baris['gambar'] ?> style="width: 200px; height: 120px"></td>
         <td><?php echo $baris['rmakan'] ?></td>

@@ -1,4 +1,8 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php';
+	if (!isset($_GET['tentang'])) {
+		header("location: index.php");
+	}
+?>
 <table width="600" border="1" align="center" cellpadding="1" cellspacing="1" bordercolor="" bgcolor="">
 				<p colspan="1" height="100%">
 			<tr>
